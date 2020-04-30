@@ -1,13 +1,17 @@
 import React from 'react';
 
-const GigResults = ({ gigs } : any) => {
-  console.log(gigs);
-  if(!gigs) return null;
+export default function GigResults() {
+
+  // const [input, setInput] = useState(QUERY_INITIAL_STATE);
+  // const [query, setQuery] = useState(QUERY_INITIAL_STATE);
+
+  // const fetcher = () => fetchArtists(query);
+
+  // useSWR(() => shouldFetch() ? `/api/artist/${query}` : null, fetcher);
 
   return (
-  <div>
-    Gigs
-  </div>
-)};
-
-export default GigResults;
+    <div>
+      Gig
+    </div>
+  )
+};

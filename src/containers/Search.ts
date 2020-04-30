@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { fetchArtists } from '../actions/artists';
 import Search from '../components/Search';
 
@@ -11,7 +12,7 @@ const mapDispatchToProps = (dispatch: any) => ({
   fetchArtists: (query: string) => dispatch(fetchArtists(query))
 })
 
-export default connect(
+export default withRouter(connect(
     mapStateToProps,
     mapDispatchToProps
-)(Search)
+)(Search));

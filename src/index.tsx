@@ -1,16 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import logger from 'redux-logger';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import App from './App';
+import './index.css';
 import * as serviceWorker from './serviceWorker';
 import reducer from './reducers';
 
+/* eslint-disable no-underscore-dangle */
 export const store = createStore(
   reducer,
-  applyMiddleware(thunk)
+  composeWithDevTools(
+    applyMiddleware(thunk, logger)
+  )
 );
+/* eslint-enable */
 
 ReactDOM.render(
   <Provider store={store}>

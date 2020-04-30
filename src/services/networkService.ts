@@ -17,6 +17,11 @@ class NetworkService {
     return this.requestService.get(url);
   }
 
+  getArtistsConcerts(artistName: string) {
+    const url = `${SONG_KICK_API_URL}${SONG_KICK_API_VERSION}/events.json?apikey=${API_KEY}&artist_name=${artistName}`;
+    return this.requestService.get(url);
+  }
+
 }
 
 export default new NetworkService()
